@@ -1,123 +1,143 @@
 body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
   background: #121212;
+  font-family: 'Roboto', sans-serif;
   color: #fff;
   display: flex;
   justify-content: center;
   padding: 20px;
 }
 
-.card-student {
-  width: 450px;
-  background: linear-gradient(145deg, #1F1F1F 0%, #2A2A2A 100%);
-  border: 2px solid #A347FF;
-  border-radius: 14px;
+.character-card {
+  background: #1F1F1F;
+  border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  width: 500px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
 }
 
-.card-header {
+/* Carteirinha */
+.card-top {
   display: flex;
-  gap: 15px;
   margin-bottom: 20px;
 }
 
-.photo input {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.photo img {
+.photo-container img {
   width: 100px;
-  height: 120px;
-  object-fit: cover;
+  height: 100px;
+  border-radius: 8px;
   border: 2px solid #A347FF;
-  border-radius: 6px;
 }
 
-.info input {
-  display: block;
-  width: 250px;
-  margin-bottom: 8px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  border: 1px solid #A347FF;
-  background: #1F1F1F;
-  color: #fff;
-}
-
-.attributes {
-  margin-bottom: 20px;
-}
-
-.attributes .attribute {
+.card-info {
+  margin-left: 15px;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 6px;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.attributes input {
-  width: 60px;
-  padding: 2px 5px;
-  border-radius: 4px;
-  border: 1px solid #A347FF;
-  background: #1F1F1F;
+.card-info input {
+  background: #2b2b2b;
   color: #fff;
+  border: 1px solid #A347FF;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 250px;
 }
 
-.bars .bar-container {
+/* Atributos */
+.attributes .attr {
   margin-bottom: 10px;
 }
 
-.bar-container label {
+.attr label {
   display: block;
-  font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
-.bar-container input {
-  width: 60px;
+.attr input {
+  width: 50px;
+  padding: 3px;
   margin-right: 10px;
-  padding: 2px 5px;
-  border-radius: 4px;
+  background: #2b2b2b;
   border: 1px solid #A347FF;
-  background: #1F1F1F;
   color: #fff;
 }
 
-.bar {
-  height: 15px;
-  width: 100%;
-  background: rgba(255,255,255,0.1);
-  border-radius: 6px;
-  overflow: hidden;
+.attr-bar {
   display: inline-block;
+  height: 10px;
+  width: 300px;
+  background: #2b2b2b;
+  border-radius: 5px;
   vertical-align: middle;
 }
 
-.fill {
+.attr-fill {
   height: 100%;
-  background: linear-gradient(90deg, #A347FF, #D68CFF);
+  background: #A347FF;
+  border-radius: 5px;
   width: 0%;
 }
 
+/* PV e Sanidade */
+.bars .bar {
+  margin: 10px 0;
+}
+
+.bar label {
+  display: inline-block;
+  width: 80px;
+}
+
+.bar input {
+  width: 50px;
+  padding: 3px;
+  background: #2b2b2b;
+  border: 1px solid #A347FF;
+  color: #fff;
+}
+
+.bar-bg {
+  display: inline-block;
+  width: 300px;
+  height: 15px;
+  background: #2b2b2b;
+  border-radius: 7px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.bar-fill {
+  height: 100%;
+  background: #A347FF;
+  border-radius: 7px;
+  width: 0%;
+}
+
+/* Perícias */
+.skills {
+  margin-top: 20px;
+}
+
 .skills h3 {
-  color: #A347FF;
   margin-bottom: 10px;
 }
 
 .skill-row {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 6px;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
-.skill-row select {
-  width: 60px;
-  padding: 2px 5px;
-  border-radius: 4px;
-  border: 1px solid #A347FF;
-  background: #1F1F1F;
+.skill-row label {
+  width: 150px;
+}
+
+.skill-select {
+  background: #2b2b2b;
   color: #fff;
+  border: 1px solid #A347FF;
+  border-radius: 5px;
+  padding: 3px;
 }
