@@ -1,31 +1,19 @@
-// FOTO DO PERSONAGEM
-const photoInput = document.getElementById('photoInput');
-const photo = document.getElementById('photo');
-
-photoInput.addEventListener('change', function() {
-  const file = this.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      photo.src = e.target.result;
-    }
-    reader.readAsDataURL(file);
-  }
-});
-
-// BARRAS DE PV E SANIDADE
-const pvNum = document.getElementById('pvNum');
-const sanNum = document.getElementById('sanNum');
-const pvBar = document.getElementById('pvBar');
-const sanBar = document.getElementById('sanBar');
+const pvFill = document.getElementById('pv-fill');
+const sanFill = document.getElementById('san-fill');
+const pvNum = document.getElementById('pv-num');
+const pvMax = document.getElementById('pv-max');
+const sanNum = document.getElementById('san-num');
+const sanMax = document.getElementById('san-max');
 
 function updateBars() {
-  pvBar.style.width = Math.min(100, pvNum.value) + '%';
-  sanBar.style.width = Math.min(100, sanNum.value) + '%';
+  pvFill.style.width = Math.min(100, (pvNum.value / pvMax.value) * 100) + '%';
+  sanFill.style.width = Math.min(100, (sanNum.value / sanMax.value) * 100) + '%';
 }
 
-pvNum.addEventListener('input', updateBars);
-sanNum.addEventListener('input', updateBars);
+// Atualiza ao digitar
+[pvNum, pvMax, sanNum, sanMax].forEach(el => {
+  el.addEventListener('input', updateBars);
+});
 
-// Inicializa barras
+// Inicializa
 updateBars();
