@@ -1,163 +1,86 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ficha RPG</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="card-student">
-
-  <!-- FOTO E INFORMAÇÕES -->
+<div class="card">
   <div class="card-header">
-    <div class="photo">
-      <input type="file" id="photoInput" accept="image/*">
-      <img id="photo" src="https://via.placeholder.com/100x120.png?text=Foto" alt="Foto do personagem">
-    </div>
-    <div class="info">
-      <input type="text" id="charName" placeholder="Nome do Personagem">
-      <input type="text" id="charOccupation" placeholder="Ultimate X">
+    <img id="char-photo" src="" alt="Foto do personagem">
+    <div class="char-info">
+      <h2 id="char-name">Nome do Personagem</h2>
+      <h3 id="char-ultimate">Ultimate Ocupação</h3>
     </div>
   </div>
 
-  <!-- ATRIBUTOS -->
   <div class="attributes">
-    <h3>Atributos</h3>
     <div class="attribute">
-      <label>Vigor:</label>
-      <input type="number" id="vigor" value="1" min="1">
+      <span>Vigor:</span> <input type="number" class="attr-num" min="1" max="20" value="1">
     </div>
     <div class="attribute">
-      <label>Intelecto:</label>
-      <input type="number" id="intelecto" value="1" min="1">
+      <span>Força:</span> <input type="number" class="attr-num" min="1" max="20" value="1">
     </div>
     <div class="attribute">
-      <label>Força:</label>
-      <input type="number" id="forca" value="1" min="1">
+      <span>Agilidade:</span> <input type="number" class="attr-num" min="1" max="20" value="1">
     </div>
     <div class="attribute">
-      <label>Agilidade:</label>
-      <input type="number" id="agilidade" value="1" min="1">
+      <span>Intelecto:</span> <input type="number" class="attr-num" min="1" max="20" value="1">
     </div>
     <div class="attribute">
-      <label>Carisma:</label>
-      <input type="number" id="carisma" value="1" min="1">
+      <span>Carisma:</span> <input type="number" class="attr-num" min="1" max="20" value="1">
     </div>
   </div>
 
-  <!-- PV E SANIDADE -->
   <div class="bars">
     <div class="bar-container">
-      <label>PV:</label>
-      <input type="number" id="pvMax" value="24" min="1"> Máx
-      <input type="number" id="pvNum" value="24" min="0"> Atual
+      <span>PV:</span>
       <div class="bar">
-        <div id="pvBar" class="fill" style="width: 100%;"></div>
+        <div class="fill" id="pv-fill"></div>
       </div>
+      <input type="number" id="pv-num" min="1" value="10">
+      / <input type="number" id="pv-max" min="1" value="10">
     </div>
+
     <div class="bar-container">
-      <label>Sanidade:</label>
-      <input type="number" id="sanMax" value="15" min="1"> Máx
-      <input type="number" id="sanNum" value="12" min="0"> Atual
+      <span>Sanidade:</span>
       <div class="bar">
-        <div id="sanBar" class="fill" style="width: 80%;"></div>
+        <div class="fill" id="san-fill"></div>
       </div>
+      <input type="number" id="san-num" min="1" value="10">
+      / <input type="number" id="san-max" min="1" value="10">
     </div>
   </div>
 
-  <!-- PERÍCIAS -->
   <div class="skills">
-    <h3>Perícias</h3>
-    <div class="skills-list">
-      <div class="skill-row"><label>Acrobacia</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Adestramento</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Artes</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Atletismo</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Atualidades</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Ciências</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Crime</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Diplomacia</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Enganação</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Fortitude</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Furtividade</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Iniciativa</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Intimidação</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Intuição</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Investigação</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Luta</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Medicina</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Ocultismo</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Percepção</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Pilotagem</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Pontaria</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Profissão</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Reflexos</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Religião</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Sobrevivência</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Tática</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Tecnologia</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
-      <div class="skill-row"><label>Vontade</label>
-        <select><option>5</option><option>10</option><option>15</option><option>20</option></select>
-      </div>
+    <h4>Perícias</h4>
+    <div class="skill">
+      <label>Acrobacia:</label>
+      <select class="skill-select">
+        <option>0</option>
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+      </select>
     </div>
+    <div class="skill">
+      <label>Adeestramento:</label>
+      <select class="skill-select">
+        <option>0</option>
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+      </select>
+    </div>
+    <div class="skill">
+      <label>Artes:</label>
+      <select class="skill-select">
+        <option>0</option>
+        <option>5</option>
+        <option>10</option>
+        <option>15</option>
+        <option>20</option>
+      </select>
+    </div>
+    <!-- Adicione todas as outras perícias aqui seguindo o mesmo padrão -->
   </div>
-
 </div>
+
 
 <script src="script.js"></script>
 </body>
