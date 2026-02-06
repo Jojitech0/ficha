@@ -1,18 +1,17 @@
-// Upload de foto
-const photoInput = document.getElementById('upload-photo');
-const charPhoto = document.getElementById('char-photo');
+// FOTO DO PERSONAGEM
+const photoInput = document.getElementById('photoInput');
+const photo = document.getElementById('photo');
 
-photoInput.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
+photoInput.addEventListener('change', function() {
+  const file = this.files[0];
+  if (file) {
     const reader = new FileReader();
-    reader.onload = (e) => {
-        charPhoto.src = e.target.result;
-    };
+    reader.onload = function(e) {
+      photo.src = e.target.result;
+    }
     reader.readAsDataURL(file);
+  }
 });
-
 // PV e Sanidade - ajuste da barra
 const pvInput = document.getElementById('max-pv');
 const pvBar = document.getElementById('pv-bar');
