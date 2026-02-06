@@ -3,105 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ficha Estilo Carteirinha</title>
+  <title>Ficha Carteirinha RPG</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- ===== CARTÃO PRINCIPAL ===== -->
-<div class="card-student">
-
-  <!-- FOTO + NOME + OCUPAÇÃO -->
-  <div class="card-header">
-    <div class="photo-box">
-      <img id="fotoPersonagem" src="" alt="Foto do Personagem">
-      <input type="file" id="uploadFoto" accept="image/*">
+  <div class="card-student">
+    <!-- FOTO E INFORMAÇÕES -->
+    <div class="card-header">
+      <div class="photo">
+        <img src="https://via.placeholder.com/100x120.png?text=Foto" alt="Foto do personagem">
+      </div>
+      <div class="info">
+        <h2 class="name">Nome do Personagem</h2>
+        <p class="occupation">Ultimate Hacker</p>
+      </div>
     </div>
-    <div class="header-text">
-      <input type="text" placeholder="Nome do Personagem" class="campo-nome">
-      <input type="text" placeholder="Jogador" class="campo-jogador">
-      <input type="text" placeholder="Ocupação (Ultimate ...)" class="campo-ocupacao">
-    </div>
-  </div>
 
-  <!-- ATRIBUTOS -->
-  <div class="card-body">
-    <div class="attributes-grid">
+    <!-- ATRIBUTOS -->
+    <div class="attributes">
       <div class="attribute">
-        <label>Vigor</label>
+        <span>Vigor</span>
         <div class="attribute-bar">
-          <input type="number" id="vigor" min="0" max="10">
-          <div class="bar"><div class="fill" style="width:0%"></div></div>
+          <div class="fill" style="width: 50%;"></div>
         </div>
       </div>
       <div class="attribute">
-        <label>Intelecto</label>
+        <span>Intelecto</span>
         <div class="attribute-bar">
-          <input type="number" id="intelecto" min="0" max="10">
-          <div class="bar"><div class="fill" style="width:0%"></div></div>
+          <div class="fill" style="width: 70%;"></div>
         </div>
       </div>
       <div class="attribute">
-        <label>Força</label>
+        <span>Força</span>
         <div class="attribute-bar">
-          <input type="number" id="forca" min="0" max="10">
-          <div class="bar"><div class="fill" style="width:0%"></div></div>
+          <div class="fill" style="width: 40%;"></div>
         </div>
       </div>
       <div class="attribute">
-        <label>Agilidade</label>
+        <span>Agilidade</span>
         <div class="attribute-bar">
-          <input type="number" id="agilidade" min="0" max="10">
-          <div class="bar"><div class="fill" style="width:0%"></div></div>
+          <div class="fill" style="width: 60%;"></div>
         </div>
       </div>
       <div class="attribute">
-        <label>Carisma</label>
+        <span>Carisma</span>
         <div class="attribute-bar">
-          <input type="number" id="carisma" min="0" max="10">
-          <div class="bar"><div class="fill" style="width:0%"></div></div>
+          <div class="fill" style="width: 80%;"></div>
         </div>
       </div>
     </div>
+
+    <!-- PERÍCIAS -->
+    <div class="skills">
+      <h3>Perícias</h3>
+      <div class="skill-row">
+        <label for="acro">Acrobacia</label>
+        <select id="acro">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="skill-row">
+        <label for="adestramento">Adestramento</label>
+        <select id="adestramento">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <div class="skill-row">
+        <label for="artes">Artes</label>
+        <select id="artes">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <!-- Adicione mais habilidades aqui seguindo o mesmo padrão -->
+    </div>
   </div>
 
-</div>
-
-<!-- ===== CARD DE PERÍCIAS ===== -->
-<div class="card-pericias">
-  <h3>Perícias</h3>
-  <div class="pericias-grid">
-    <label>Acrobacia<input type="number" id="acro"></label>
-    <label>Adestramento<input type="number" id="adestramento"></label>
-    <label>Artes<input type="number" id="artes"></label>
-    <label>Atletismo<input type="number" id="atletismo"></label>
-    <label>Atualidades<input type="number" id="atualidades"></label>
-    <label>Ciências<input type="number" id="ciencias"></label>
-    <label>Crime<input type="number" id="crime"></label>
-    <label>Diplomacia<input type="number" id="diplomacia"></label>
-    <label>Enganação<input type="number" id="enganacao"></label>
-    <label>Fortitude<input type="number" id="fortitude"></label>
-    <label>Furtividade<input type="number" id="furtividade"></label>
-    <label>Iniciativa<input type="number" id="iniciativa"></label>
-    <label>Intimidação<input type="number" id="intimidacao"></label>
-    <label>Intuição<input type="number" id="intuicao"></label>
-    <label>Investigação<input type="number" id="investigacao"></label>
-    <label>Luta<input type="number" id="luta"></label>
-    <label>Medicina<input type="number" id="medicina"></label>
-    <label>Ocultismo<input type="number" id="ocultismo"></label>
-    <label>Percepção<input type="number" id="percepcao"></label>
-    <label>Pilotagem<input type="number" id="pilotagem"></label>
-    <label>Pontaria<input type="number" id="pontaria"></label>
-    <label>Profissão<input type="number" id="profissao"></label>
-    <label>Reflexos<input type="number" id="reflexos"></label>
-    <label>Religião<input type="number" id="religiao"></label>
-    <label>Sobrevivência<input type="number" id="sobrevivencia"></label>
-    <label>Tática<input type="number" id="tatica"></label>
-    <label>Tecnologia<input type="number" id="tecnologia"></label>
-    <label>Vontade<input type="number" id="vontade"></label>
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
