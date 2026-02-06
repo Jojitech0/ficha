@@ -1,171 +1,112 @@
+/* Reset e cores base */
 body {
-:root {
-    --color-primary: #A347FF;
-    --color-secondary: #7000AC;
-    --color-smoky-black: #121212;
-    --color-light-black: #1F1F1F;
-    --color-black: #0a0a0a;
-    --color-dark-gray: #1E1E1E;
-    --color-white: #fff;
-    --color-gray: rgba(255, 255, 255, .1);
-    --color-off-white: rgba(255, 255, 255, .6);
-}
-
-body {
-  background: var(--color-smoky-black);
-  font-family: Roboto, sans-serif;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #121212;
+  color: #fff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  color: var(--color-off-white);
+  justify-content: center;
+  padding: 30px;
 }
 
-/* CARTÃO PRINCIPAL */
 .card-student {
-  width: 850px;
-  background: var(--color-light-black);
-  border: 2px solid var(--color-primary);
+  width: 400px;
+  background: linear-gradient(145deg, #1F1F1F 0%, #2A2A2A 100%);
+  border: 2px solid #A347FF;
   border-radius: 14px;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3), 0 4px 12px rgba(0,0,0,0.6);
+  overflow: hidden;
   padding: 20px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Textura leve */
+.card-student::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  pointer-events: none;
 }
 
 /* CABEÇALHO */
 .card-header {
   display: flex;
-  gap: 20px;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.photo-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 140px;
-}
-
-.photo-box img {
-  width: 140px;
-  height: 160px;
-  border: 2px solid var(--color-primary);
-  border-radius: 10px;
+.photo img {
+  width: 100px;
+  height: 120px;
   object-fit: cover;
-  background: var(--color-black);
-}
-
-.photo-box input[type=file] {
-  margin-top: 8px;
-  color: var(--color-white);
-}
-
-.header-text {
-  flex: 1;
-}
-
-.header-text input {
-  width: 100%;
-  background: var(--color-dark-gray);
-  border: 2px solid var(--color-secondary);
+  border: 2px solid #A347FF;
   border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 16px;
-  color: var(--color-white);
-  margin-bottom: 6px;
-  transition: 0.3s;
+  margin-right: 15px;
 }
 
-.header-text input:focus {
-  border-color: var(--color-primary);
-  outline: none;
-  box-shadow: 0 0 8px var(--color-primary);
+.info .name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.info .occupation {
+  font-size: 1rem;
+  color: #D68CFF;
 }
 
 /* ATRIBUTOS */
-.attributes-grid {
+.attributes {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
-.attribute {
-  background: var(--color-dark-gray);
-  border: 2px solid var(--color-secondary);
-  border-radius: 8px;
-  padding: 10px;
-  width: calc(20% - 8px);
-  text-align: center;
-}
-
-.attribute label {
+.attribute span {
   display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
 .attribute-bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.attribute-bar input {
-  width: 50px;
-  text-align: center;
-  border: none;
-  border-radius: 6px;
-  background: var(--color-black);
-  color: var(--color-white);
-  margin-bottom: 5px;
-}
-
-/* BARRA VISUAL */
-.attribute-bar .bar {
+  height: 12px;
   width: 100%;
-  height: 10px;
-  background: var(--color-gray);
-  border-radius: 5px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .attribute-bar .fill {
   height: 100%;
-  background: var(--color-primary);
+  background: linear-gradient(90deg, #A347FF, #D68CFF);
   width: 0%;
-  border-radius: 5px;
-  transition: width 0.3s ease;
 }
 
 /* PERÍCIAS */
-.card-pericias {
-  width: 850px;
-  background: var(--color-light-black);
-  border: 2px solid var(--color-secondary);
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+.skills h3 {
+  margin: 0 0 10px 0;
+  color: #A347FF;
 }
 
-.card-pericias h3 {
-  text-align: center;
-  margin-bottom: 15px;
-  font-size: 22px;
-  color: var(--color-primary);
-}
-
-.pericias-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.pericias-grid label {
+.skill-row {
   display: flex;
   justify-content: space-between;
-  background: var(--color-dark-gray);
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 14px;
-  border: 2px solid var(--color-primary);
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.skill-row select {
+  background: #1F1F1F;
+  border: 1px solid #A347FF;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
