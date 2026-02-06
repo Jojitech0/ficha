@@ -1,6 +1,6 @@
 body {
   font-family: 'Arial', sans-serif;
-  background: #1c1c1c;
+  background: #2b2b2b;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -11,51 +11,66 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 900px;
+  width: 950px;
 }
 
-/* Cards */
+/* Cards gerais */
 .card {
-  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  background: linear-gradient(135deg, #3b3b3b, #1e1e1e);
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* Atributos */
-.atributos-card h2 {
-  margin-bottom: 15px;
-}
-
-.atributo {
+/* Carteirinha de estudante */
+.carteirinha-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  flex-direction: column;
+  padding: 15px 20px;
+  border: 2px solid #fff;
 }
 
-.atributo input {
-  width: 60px;
-  margin-left: 10px;
+.carteirinha-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.atributos-carteirinha {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.atributo-card {
+  background: #1f1f1f;
+  padding: 10px;
+  border-radius: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.atributo-nome {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.atributo-card input {
+  width: 50px;
+  text-align: center;
   border-radius: 5px;
   border: 1px solid #555;
   background: #222;
   color: #fff;
-  text-align: center;
-}
-
-/* Barras pequenas */
-.barra-pequena {
-  height: 8px;
-  background: #4CAF50;
-  width: 0%;
-  border-radius: 4px;
-  margin-left: 10px;
 }
 
 /* Perícias */
 .pericias-card h2 {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .pericias-grid {
@@ -67,22 +82,7 @@ body {
 .pericias-grid label {
   display: flex;
   justify-content: space-between;
-  background: #222;
   padding: 5px 10px;
-  border-radius: 10px;
-}
-
-/* Inventário */
-.inventario-card h2 {
-  margin-bottom: 10px;
-}
-
-.inventario-card textarea {
-  width: 100%;
-  border-radius: 10px;
-  background: #222;
-  color: #fff;
-  border: 1px solid #555;
-  padding: 10px;
-  resize: vertical;
+  background: #2a2a2a;
+  border-radius: 8px;
 }
