@@ -37,14 +37,14 @@ const photoInput = document.getElementById('upload-photo');
 const charPhoto = document.getElementById('char-photo');
     
 });
-photoInput.addEventListener('change', (event) => {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            charPhoto.src = e.target.result; // Atualiza a imagem da ficha
-        };
-        reader.readAsDataURL(file);
-    }
+document.getElementById('upload-photo').addEventListener('change', function(e){
+  const file = e.target.files[0];
+  if(!file) return;
+  
+  const reader = new FileReader();
+  reader.onload = function(event){
+    document.getElementById('char-photo').src = event.target.result;
+  };
+  reader.readAsDataURL(file);
 });
 
