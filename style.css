@@ -1,144 +1,78 @@
 body {
   background: #121212;
   font-family: 'Roboto', sans-serif;
-  color: #fff;
   display: flex;
   justify-content: center;
   padding: 20px;
 }
 
-.character-card {
-  background: #1F1F1F;
-  border-radius: 15px;
-  padding: 20px;
-  width: 500px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+.card {
+  width: 380px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
 }
 
-/* Carteirinha */
-.card-top {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.photo-container img {
+.photo-container {
+  position: relative;
   width: 100px;
   height: 100px;
-  border-radius: 8px;
-  border: 2px solid #A347FF;
+  margin: auto;
+}
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #7000AC;
+}
+.photo-container input[type="file"] {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
-.card-info {
-  margin-left: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.card-info input {
-  background: #2b2b2b;
-  color: #fff;
-  border: 1px solid #A347FF;
-  border-radius: 5px;
-  margin-bottom: 5px;
+.info input {
+  width: 100%;
+  margin: 5px 0;
   padding: 5px;
-  width: 250px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
 }
 
-/* Atributos */
-.attributes .attr {
-  margin-bottom: 10px;
+.attributes, .bars, .skills {
+  margin-top: 15px;
 }
 
-.attr label {
-  display: block;
-  margin-bottom: 3px;
-}
-
-.attr input {
-  width: 50px;
-  padding: 3px;
-  margin-right: 10px;
-  background: #2b2b2b;
-  border: 1px solid #A347FF;
-  color: #fff;
-}
-
-.attr-bar {
-  display: inline-block;
-  height: 10px;
-  width: 300px;
-  background: #2b2b2b;
-  border-radius: 5px;
-  vertical-align: middle;
-}
-
-.attr-fill {
-  height: 100%;
-  background: #A347FF;
-  border-radius: 5px;
-  width: 0%;
-}
-
-/* PV e Sanidade */
-.bars .bar {
-  margin: 10px 0;
-}
-
-.bar label {
-  display: inline-block;
-  width: 80px;
-}
-
-.bar input {
-  width: 50px;
-  padding: 3px;
-  background: #2b2b2b;
-  border: 1px solid #A347FF;
-  color: #fff;
-}
-
-.bar-bg {
-  display: inline-block;
-  width: 300px;
-  height: 15px;
-  background: #2b2b2b;
-  border-radius: 7px;
-  vertical-align: middle;
-  margin-left: 10px;
-}
-
-.bar-fill {
-  height: 100%;
-  background: #A347FF;
-  border-radius: 7px;
-  width: 0%;
-}
-
-/* Perícias */
-.skills {
-  margin-top: 20px;
-}
-
-.skills h3 {
-  margin-bottom: 10px;
-}
-
-.skill-row {
+.attribute, .bar-container, .skill {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
 }
 
-.skill-row label {
-  width: 150px;
+.bar {
+  flex: 1;
+  height: 15px;
+  background: #ddd;
+  border-radius: 8px;
+  margin-left: 5px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  background: #A347FF;
+  width: 50%;
 }
 
-.skill-select {
-  background: #2b2b2b;
-  color: #fff;
-  border: 1px solid #A347FF;
-  border-radius: 5px;
-  padding: 3px;
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
 }
-
+.skill select {
+  width: 60px;
+}
