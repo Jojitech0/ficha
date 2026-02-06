@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ficha RPG Interativa</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha RPG Artística</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <div class="ficha-container">
 
-  <!-- Background da ficha (opcional, pode comentar se não quiser imagem) -->
-  <div class="ficha-background"></div>
-
-  <!-- Atributos -->
-  <div class="atributos">
-    <label>Vigor: <input type="number" id="vigor" value="0"></label>
-    <label>Intelecto: <input type="number" id="intelecto" value="0"></label>
-    <label>Força: <input type="number" id="forca" value="0"></label>
-    <label>Agilidade: <input type="number" id="agilidade" value="0"></label>
-    <label>Carisma: <input type="number" id="carisma" value="0"></label>
-  </div>
-
-  <!-- PV e Sanidade -->
-  <div class="pv-sanidade">
-    <div class="barra-container">
-      <span>PV:</span>
-      <button onclick="modPV(-1)">-</button>
-      <input type="number" id="pvAtual" value="24">
-      <span>/</span>
-      <input type="number" id="pvMax" value="24">
-      <button onclick="modPV(1)">+</button>
-      <div class="barra" id="barraPV"></div>
+  <!-- Atributos + Barras -->
+  <div class="card atributos-card">
+    <h2>Atributos</h2>
+    <div class="atributo">
+      <span>Vigor</span>
+      <input type="number" id="vigor" value="0">
+      <div class="barra-pequena" id="barraPV"></div>
     </div>
-
-    <div class="barra-container">
-      <span>Sanidade:</span>
-      <button onclick="modSan(-1)">-</button>
-      <input type="number" id="sanAtual" value="12">
-      <span>/</span>
-      <input type="number" id="sanMax" value="15">
-      <button onclick="modSan(1)">+</button>
-      <div class="barra" id="barraSan"></div>
+    <div class="atributo">
+      <span>Intelecto</span>
+      <input type="number" id="intelecto" value="0">
+      <div class="barra-pequena" id="barraSan"></div>
+    </div>
+    <div class="atributo">
+      <span>Força</span>
+      <input type="number" id="forca" value="0">
+    </div>
+    <div class="atributo">
+      <span>Agilidade</span>
+      <input type="number" id="agilidade" value="0">
+    </div>
+    <div class="atributo">
+      <span>Carisma</span>
+      <input type="number" id="carisma" value="0">
     </div>
   </div>
 
-  <!-- Perícias em grid -->
-  <div class="pericias">
-    <h3>Perícias</h3>
+  <!-- Perícias -->
+  <div class="card pericias-card">
+    <h2>Perícias</h2>
     <div class="pericias-grid">
       <label>Acrobacia: <input type="number" id="acro" value="0"></label>
       <label>Adestramento: <input type="number" id="adestramento" value="0"></label>
@@ -80,9 +73,9 @@
   </div>
 
   <!-- Inventário -->
-  <div class="inventario">
-    <h3>Inventário</h3>
-    <textarea id="inventario" rows="5" placeholder="Itens do personagem"></textarea>
+  <div class="card inventario-card">
+    <h2>Inventário</h2>
+    <textarea id="inventario" rows="6" placeholder="Itens do personagem"></textarea>
   </div>
 
 </div>
