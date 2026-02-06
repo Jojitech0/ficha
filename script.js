@@ -33,15 +33,18 @@ const skillSelects = document.querySelectorAll('.skill-select');
 skillSelects.forEach(select => {
   select.addEventListener('change', () => {
     console.log(`${select.previousElementSibling.textContent}: ${select.value}`);
-  });
+const photoInput = document.getElementById('upload-photo');
+const charPhoto = document.getElementById('char-photo');
+    
 });
-const exportBtn = document.getElementById('export-btn');
-exportBtn.addEventListener('click', () => {
-    const card = document.querySelector('.card');
-    html2canvas(card).then(canvas => {
-        const link = document.createElement('a');
-        link.download = 'ficha_personagem.jpeg';
-        link.href = canvas.toDataURL('image/jpeg', 1.0); // 1.0 = qualidade máxima
-        link.click();
-    });
+photoInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            charPhoto.src = e.target.result; // Atualiza a imagem da ficha
+        };
+        reader.readAsDataURL(file);
+    }
 });
+
