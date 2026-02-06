@@ -1,3 +1,4 @@
+// ===== PV e Sanidade =====
 const pvFill = document.getElementById('pv-fill');
 const sanFill = document.getElementById('san-fill');
 const pvNum = document.getElementById('pv-num');
@@ -10,10 +11,28 @@ function updateBars() {
   sanFill.style.width = Math.min(100, (sanNum.value / sanMax.value) * 100) + '%';
 }
 
-// Atualiza ao digitar
-[pvNum, pvMax, sanNum, sanMax].forEach(el => {
-  el.addEventListener('input', updateBars);
+[pvNum, pvMax, sanNum, sanMax].forEach(el => el.addEventListener('input', updateBars));
+updateBars();
+
+// ===== Atributos =====
+const attrInputs = document.querySelectorAll('.attr-num');
+
+attrInputs.forEach(input => {
+  const fill = input.parentElement.querySelector('.attr-fill');
+  input.addEventListener('input', () => {
+    let val = parseInt(input.value);
+    if(val < 1) input.value = 1;
+    if(val > 20) input.value = 20;
+    fill.style.width = (input.value / 20 * 100) + '%';
+  });
+  fill.style.width = (input.value / 20 * 100) + '%';
 });
 
-// Inicializa
-updateBars();
+// ===== Perícias =====
+const skillSelects = document.querySelectorAll('.skill-select');
+skillSelects.forEach(select => {
+  select.addEventListener('change', () => {
+    console.log(`${select.previousElementSibling.textContent}: ${select.value}`);
+  });
+});
+
