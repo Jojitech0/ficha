@@ -1,11 +1,13 @@
-function updateBar(idAtual, idMax, barraId) {
-  const atual = Number(document.getElementById(idAtual).value || 0);
-  const max = Number(document.getElementById(idMax)?.value || 10);
-  const barra = document.getElementById(barraId);
-  const pct = Math.min((atual / max) * 100, 100);
-  barra.style.width = pct + '%';
-}
+const uploadInput = document.getElementById('uploadFoto');
+const imgPersonagem = document.getElementById('fotoPersonagem');
 
-// Atualização das barras (para atributos que usam barra, se quiser)
-updateBar('vigor', 'pvMax', 'barraPV');
-updateBar('intelecto', 'sanMax', 'barraSan');
+uploadInput.addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      imgPersonagem.src = e.target.result;
+    }
+    reader.readAsDataURL(file);
+  }
+});
