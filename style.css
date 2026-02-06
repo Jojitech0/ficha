@@ -1,6 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #222;
+  font-family: 'Arial', sans-serif;
+  background: #1c1c1c;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -8,69 +8,81 @@ body {
 }
 
 .ficha-container {
-  position: relative;
-  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 900px;
+}
+
+/* Cards */
+.card {
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  border-radius: 15px;
   padding: 20px;
-  background: #111;
-  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.ficha-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('ficha.png') no-repeat center center;
-  background-size: cover;
-  opacity: 0.2;
-  z-index: 0;
+/* Atributos */
+.atributos-card h2 {
+  margin-bottom: 15px;
 }
 
-.atributos, .pv-sanidade, .pericias, .inventario {
-  position: relative;
-  z-index: 1;
-  margin-bottom: 20px;
+.atributo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
-.atributos label {
-  display: inline-block;
-  width: 180px;
-  margin: 3px 0;
-}
-
-.barra-container {
-  margin: 10px 0;
-}
-
-.barra {
-  width: 0%;
-  height: 15px;
-  background: #4CAF50;
-  margin-top: 5px;
+.atributo input {
+  width: 60px;
+  margin-left: 10px;
   border-radius: 5px;
-  transition: width 0.3s;
+  border: 1px solid #555;
+  background: #222;
+  color: #fff;
+  text-align: center;
+}
+
+/* Barras pequenas */
+.barra-pequena {
+  height: 8px;
+  background: #4CAF50;
+  width: 0%;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+/* Perícias */
+.pericias-card h2 {
+  margin-bottom: 15px;
 }
 
 .pericias-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
+  gap: 8px;
 }
 
 .pericias-grid label {
   display: flex;
   justify-content: space-between;
   background: #222;
-  padding: 3px 5px;
-  border-radius: 5px;
+  padding: 5px 10px;
+  border-radius: 10px;
 }
 
-.inventario textarea {
+/* Inventário */
+.inventario-card h2 {
+  margin-bottom: 10px;
+}
+
+.inventario-card textarea {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
   background: #222;
   color: #fff;
   border: 1px solid #555;
-  padding: 5px;
+  padding: 10px;
+  resize: vertical;
 }
