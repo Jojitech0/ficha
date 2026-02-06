@@ -37,14 +37,6 @@ const photoInput = document.getElementById('upload-photo');
 const charPhoto = document.getElementById('char-photo');
     
 });
-document.getElementById('upload-photo').addEventListener('change', function(e){
-  const file = e.target.files[0];
-  if(!file) return;
   
-  const reader = new FileReader();
-  reader.onload = function(event){
-    document.getElementById('char-photo').src = event.target.result;
-  };
-  reader.readAsDataURL(file);
 });
 
