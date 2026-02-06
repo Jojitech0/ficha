@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha RPG Interativa</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ficha-container">
+
+  <!-- Background da ficha (opcional, pode comentar se não quiser imagem) -->
+  <div class="ficha-background"></div>
+
+  <!-- Atributos -->
+  <div class="atributos">
+    <label>Vigor: <input type="number" id="vigor" value="0"></label>
+    <label>Intelecto: <input type="number" id="intelecto" value="0"></label>
+    <label>Força: <input type="number" id="forca" value="0"></label>
+    <label>Agilidade: <input type="number" id="agilidade" value="0"></label>
+    <label>Carisma: <input type="number" id="carisma" value="0"></label>
+  </div>
+
+  <!-- PV e Sanidade -->
+  <div class="pv-sanidade">
+    <div class="barra-container">
+      <span>PV:</span>
+      <button onclick="modPV(-1)">-</button>
+      <input type="number" id="pvAtual" value="24">
+      <span>/</span>
+      <input type="number" id="pvMax" value="24">
+      <button onclick="modPV(1)">+</button>
+      <div class="barra" id="barraPV"></div>
+    </div>
+
+    <div class="barra-container">
+      <span>Sanidade:</span>
+      <button onclick="modSan(-1)">-</button>
+      <input type="number" id="sanAtual" value="12">
+      <span>/</span>
+      <input type="number" id="sanMax" value="15">
+      <button onclick="modSan(1)">+</button>
+      <div class="barra" id="barraSan"></div>
+    </div>
+  </div>
+
+  <!-- Perícias em grid -->
+  <div class="pericias">
+    <h3>Perícias</h3>
+    <div class="pericias-grid">
+      <label>Acrobacia: <input type="number" id="acro" value="0"></label>
+      <label>Adestramento: <input type="number" id="adestramento" value="0"></label>
+      <label>Artes: <input type="number" id="artes" value="0"></label>
+      <label>Atletismo: <input type="number" id="atletismo" value="0"></label>
+      <label>Atualidades: <input type="number" id="atualidades" value="0"></label>
+      <label>Ciências: <input type="number" id="ciencias" value="0"></label>
+      <label>Crime: <input type="number" id="crime" value="0"></label>
+      <label>Diplomacia: <input type="number" id="diplomacia" value="0"></label>
+      <label>Enganação: <input type="number" id="enganaçao" value="0"></label>
+      <label>Fortitude: <input type="number" id="fortitude" value="0"></label>
+      <label>Furtividade: <input type="number" id="furtividade" value="0"></label>
+      <label>Iniciativa: <input type="number" id="iniciativa" value="0"></label>
+      <label>Intimidação: <input type="number" id="intimidacao" value="0"></label>
+      <label>Intuição: <input type="number" id="intuicao" value="0"></label>
+      <label>Investigação: <input type="number" id="investigacao" value="0"></label>
+      <label>Luta: <input type="number" id="luta" value="0"></label>
+      <label>Medicina: <input type="number" id="medicina" value="0"></label>
+      <label>Ocultismo: <input type="number" id="ocultismo" value="0"></label>
+      <label>Percepção: <input type="number" id="percepcao" value="0"></label>
+      <label>Pilotagem: <input type="number" id="pilotagem" value="0"></label>
+      <label>Pontaria: <input type="number" id="pontaria" value="0"></label>
+      <label>Profissão: <input type="number" id="profissao" value="0"></label>
+      <label>Reflexos: <input type="number" id="reflexos" value="0"></label>
+      <label>Religião: <input type="number" id="religiao" value="0"></label>
+      <label>Sobrevivência: <input type="number" id="sobrevivencia" value="0"></label>
+      <label>Tática: <input type="number" id="tatica" value="0"></label>
+      <label>Tecnologia: <input type="number" id="tecnologia" value="0"></label>
+      <label>Vontade: <input type="number" id="vontade" value="0"></label>
+    </div>
+  </div>
+
+  <!-- Inventário -->
+  <div class="inventario">
+    <h3>Inventário</h3>
+    <textarea id="inventario" rows="5" placeholder="Itens do personagem"></textarea>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
