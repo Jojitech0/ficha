@@ -23,3 +23,11 @@ atributos.forEach(attr => {
     fill.style.width = (value * 10) + '%'; // max 10 pontos = 100%
   });
 });
+// exemplo de atualização de barra de atributo (você pode expandir)
+const fillBars = document.querySelectorAll('.attribute-bar .fill');
+
+fillBars.forEach(bar => {
+  // aqui você pode ajustar dinamicamente pelo valor do atributo
+  // Ex: 50% = metade, 80% = 80%, etc.
+  // Para testes está fixo no HTML inline
+});
