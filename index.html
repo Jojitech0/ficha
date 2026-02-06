@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ficha RPG Artística</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha Estilo Danganronpa</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="ficha-container">
 
-  <!-- Atributos + Barras -->
-  <div class="card atributos-card">
-    <h2>Atributos</h2>
-    <div class="atributo">
-      <span>Vigor</span>
-      <input type="number" id="vigor" value="0">
-      <div class="barra-pequena" id="barraPV"></div>
+  <!-- Carteirinha de Atributos -->
+  <div class="card carteirinha-card">
+    <div class="carteirinha-header">
+      <h2>Personagem</h2>
+      <span>Jogador: __________</span>
     </div>
-    <div class="atributo">
-      <span>Intelecto</span>
-      <input type="number" id="intelecto" value="0">
-      <div class="barra-pequena" id="barraSan"></div>
-    </div>
-    <div class="atributo">
-      <span>Força</span>
-      <input type="number" id="forca" value="0">
-    </div>
-    <div class="atributo">
-      <span>Agilidade</span>
-      <input type="number" id="agilidade" value="0">
-    </div>
-    <div class="atributo">
-      <span>Carisma</span>
-      <input type="number" id="carisma" value="0">
+    <div class="atributos-carteirinha">
+      <div class="atributo-card">
+        <span class="atributo-nome">Vigor</span>
+        <input type="number" id="vigor" value="0">
+      </div>
+      <div class="atributo-card">
+        <span class="atributo-nome">Intelecto</span>
+        <input type="number" id="intelecto" value="0">
+      </div>
+      <div class="atributo-card">
+        <span class="atributo-nome">Força</span>
+        <input type="number" id="forca" value="0">
+      </div>
+      <div class="atributo-card">
+        <span class="atributo-nome">Agilidade</span>
+        <input type="number" id="agilidade" value="0">
+      </div>
+      <div class="atributo-card">
+        <span class="atributo-nome">Carisma</span>
+        <input type="number" id="carisma" value="0">
+      </div>
     </div>
   </div>
 
-  <!-- Perícias -->
+  <!-- Tabela de Perícias -->
   <div class="card pericias-card">
     <h2>Perícias</h2>
     <div class="pericias-grid">
@@ -72,14 +75,7 @@
     </div>
   </div>
 
-  <!-- Inventário -->
-  <div class="card inventario-card">
-    <h2>Inventário</h2>
-    <textarea id="inventario" rows="6" placeholder="Itens do personagem"></textarea>
-  </div>
-
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
