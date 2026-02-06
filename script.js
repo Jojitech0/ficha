@@ -1,51 +1,30 @@
-// ===== PV e Sanidade =====
-const pvFill = document.getElementById('pv-fill');
-const sanFill = document.getElementById('san-fill');
-const pvNum = document.getElementById('pv-num');
-const pvMax = document.getElementById('pv-max');
-const sanNum = document.getElementById('san-num');
-const sanMax = document.getElementById('san-max');
-
-function updateBars() {
-  pvFill.style.width = Math.min(100, (pvNum.value / pvMax.value) * 100) + '%';
-  sanFill.style.width = Math.min(100, (sanNum.value / sanMax.value) * 100) + '%';
-}
-
-[pvNum, pvMax, sanNum, sanMax].forEach(el => el.addEventListener('input', updateBars));
-updateBars();
-
-// ===== Atributos =====
-const attrInputs = document.querySelectorAll('.attr-num');
-
-attrInputs.forEach(input => {
-  const fill = input.parentElement.querySelector('.attr-fill');
-  input.addEventListener('input', () => {
-    let val = parseInt(input.value);
-    if(val < 1) input.value = 1;
-    if(val > 20) input.value = 20;
-    fill.style.width = (input.value / 20 * 100) + '%';
-  });
-  fill.style.width = (input.value / 20 * 100) + '%';
-});
-
-// ===== Perícias =====
-const skillSelects = document.querySelectorAll('.skill-select');
-skillSelects.forEach(select => {
-  select.addEventListener('change', () => {
-    console.log(`${select.previousElementSibling.textContent}: ${select.value}`);
-  });
-});
+// Upload de foto
 const photoInput = document.getElementById('upload-photo');
 const charPhoto = document.getElementById('char-photo');
 
 photoInput.addEventListener('change', (event) => {
     const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            charPhoto.src = e.target.result; // Atualiza a imagem da ficha
-        };
-        reader.readAsDataURL(file);
-    }
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+        charPhoto.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+});
+
+// PV e Sanidade - ajuste da barra
+const pvInput = document.getElementById('max-pv');
+const pvBar = document.getElementById('pv-bar');
+pvInput.addEventListener('input', () => {
+    const val = pvInput.value;
+    pvBar.style.width = Math.min(val, 100) + "%";
+});
+
+const sanInput = document.getElementById('max-san');
+const sanBar = document.getElementById('san-bar');
+sanInput.addEventListener('input', () => {
+    const val = sanInput.value;
+    sanBar.style.width = Math.min(val, 100) + "%";
 });
 
