@@ -33,10 +33,8 @@ const skillSelects = document.querySelectorAll('.skill-select');
 skillSelects.forEach(select => {
   select.addEventListener('change', () => {
     console.log(`${select.previousElementSibling.textContent}: ${select.value}`);
-const photoInput = document.getElementById('upload-photo');
-const charPhoto = document.getElementById('char-photo');
-    
+  });
 });
-  
+
 });
 
